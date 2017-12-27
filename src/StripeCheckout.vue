@@ -5,7 +5,7 @@
 
         <button @click.prevent="purchase()"
                 :class="btnClass"
-                :disabled="!loaded && !disabled">
+                :disabled="disabled || !loaded">
             {{ button }}
         </button>
     </div>
