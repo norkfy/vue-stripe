@@ -5,7 +5,7 @@
 
         <button @click.prevent="purchase()"
                 :class="btnClass"
-                :disabled="!loaded">
+                :disabled="!loaded && !disabled">
             {{ button }}
         </button>
     </div>
@@ -18,6 +18,11 @@
 
     export default {
         props: {
+            disabled: {
+                type: Boolean,
+                required: false,
+                default: false,
+            },
             formId: {
                 type: String,
                 required: false,
